@@ -16,7 +16,7 @@ app.use(fileUpload());
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.MONGO_URI, {
-  useNewUrlParser: true, useUnifiedTopology: true, autoIndex: true
+  useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, autoIndex: true, useFindAndModify: false
 }).then(() => {
   console.log('Database sucessfully connected')
 }, error => {
